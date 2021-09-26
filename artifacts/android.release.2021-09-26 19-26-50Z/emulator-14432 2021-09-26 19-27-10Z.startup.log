@@ -1,0 +1,78 @@
+--------- beginning of system
+09-26 21:26:55.389 16340 16340 W ActivityThread: Package uses different ABI(s) than its instrumentation: package[com.rne2e]: arm64-v8a, null instrumentation[com.rne2e.test]: null, null
+--------- beginning of main
+09-26 21:26:55.390 16340 16340 I com.rne2e: The ClassLoaderContext is a special shared library.
+09-26 21:26:55.391 16340 16340 I chatty  : uid=10177(com.rne2e) identical 1 line
+09-26 21:26:55.391 16340 16340 I com.rne2e: The ClassLoaderContext is a special shared library.
+09-26 21:26:55.450 16340 16340 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+09-26 21:26:55.450 16340 16340 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+09-26 21:26:55.451 16340 16340 I com.rne2e: The ClassLoaderContext is a special shared library.
+09-26 21:26:55.452 16340 16340 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+09-26 21:26:55.452 16340 16340 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+09-26 21:26:55.452 16340 16340 I com.rne2e: The ClassLoaderContext is a special shared library.
+09-26 21:26:55.453 16340 16340 I chatty  : uid=10177(com.rne2e) identical 2 lines
+09-26 21:26:55.454 16340 16340 I com.rne2e: The ClassLoaderContext is a special shared library.
+09-26 21:26:55.502 16340 16340 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+09-26 21:26:55.502 16340 16340 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+09-26 21:26:55.503 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:55.638 16340 16340 I chatty  : uid=10177(com.rne2e) identical 5 lines
+09-26 21:26:55.638 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:55.688 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:56.069 16340 16340 I chatty  : uid=10177(com.rne2e) identical 16 lines
+09-26 21:26:56.070 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:56.112 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.218 16340 16340 I chatty  : uid=10177(com.rne2e) identical 96 lines
+09-26 21:26:58.218 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.260 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.506 16340 16340 I chatty  : uid=10177(com.rne2e) identical 12 lines
+09-26 21:26:58.506 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.564 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.564 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.630 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.717 16340 16340 I chatty  : uid=10177(com.rne2e) identical 4 lines
+09-26 21:26:58.717 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.758 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.840 16340 16340 I chatty  : uid=10177(com.rne2e) identical 4 lines
+09-26 21:26:58.840 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.883 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:58.964 16340 16340 I chatty  : uid=10177(com.rne2e) identical 4 lines
+09-26 21:26:58.964 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:59.005 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:59.047 16340 16340 I chatty  : uid=10177(com.rne2e) identical 2 lines
+09-26 21:26:59.048 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:59.091 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:59.496 16340 16340 I chatty  : uid=10177(com.rne2e) identical 18 lines
+09-26 21:26:59.496 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:59.543 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:26:59.974 16340 16340 I chatty  : uid=10177(com.rne2e) identical 20 lines
+09-26 21:26:59.975 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:00.022 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:02.090 16340 16340 I chatty  : uid=10177(com.rne2e) identical 100 lines
+09-26 21:27:02.090 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:02.131 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:02.379 16340 16340 I chatty  : uid=10177(com.rne2e) identical 12 lines
+09-26 21:27:02.380 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:02.423 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:03.699 16340 16340 I chatty  : uid=10177(com.rne2e) identical 62 lines
+09-26 21:27:03.699 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:03.740 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:04.583 16340 16340 I chatty  : uid=10177(com.rne2e) identical 40 lines
+09-26 21:27:04.584 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:04.627 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:05.088 16340 16340 I chatty  : uid=10177(com.rne2e) identical 22 lines
+09-26 21:27:05.088 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:05.129 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:05.915 16340 16340 I chatty  : uid=10177(com.rne2e) identical 38 lines
+09-26 21:27:05.915 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:05.959 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:05.960 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:06.002 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:08.061 16340 16340 I chatty  : uid=10177(com.rne2e) identical 100 lines
+09-26 21:27:08.062 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:08.103 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:09.381 16340 16340 I chatty  : uid=10177(com.rne2e) identical 63 lines
+09-26 21:27:09.423 16340 16340 W com.rne2e: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+09-26 21:27:09.426 16340 16340 W TestGrouping: Invalid Package: '' could not be found or has no tests
+09-26 21:27:09.429 16340 16340 D SoLoader: init start
+09-26 21:27:09.430 16340 16340 D SoLoader: adding system library source: /vendor/lib64
+09-26 21:27:09.430 16340 16340 D SoLoader: adding system library source: /system/lib64

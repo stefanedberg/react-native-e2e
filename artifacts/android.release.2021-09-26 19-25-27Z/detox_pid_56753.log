@@ -1,0 +1,293 @@
+detox[56753] TRACE: [DETOX_CREATE] created a Detox instance with config:
+{
+  artifactsConfig: {
+    rootDir: 'artifacts/android.release.2021-09-26 19-25-27Z',
+    plugins: {
+      log: {
+        enabled: true,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      screenshot: {
+        enabled: true,
+        shouldTakeAutomaticSnapshots: false,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      video: {
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      instruments: {
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      timeline: {
+        enabled: false
+      },
+      uiHierarchy: {
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false
+      }
+    },
+    pathBuilder: ArtifactPathBuilder {
+      _rootDir: 'artifacts/android.release.2021-09-26 19-25-27Z'
+    }
+  },
+  appsConfig: {
+    default: {
+      type: 'android.apk',
+      binaryPath: 'android/app/build/outputs/apk/release/app-release.apk',
+      build: 'cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd ..'
+    }
+  },
+  behaviorConfig: {
+    init: {
+      reinstallApp: true,
+      exposeGlobals: true
+    },
+    cleanup: {
+      shutdownDevice: false
+    },
+    launchApp: 'auto'
+  },
+  cliConfig: {
+    recordLogs: 'all',
+    configuration: 'android.release',
+    forceAdbInstall: 'false',
+    useCustomLogger: 'true'
+  },
+  deviceConfig: {
+    type: 'android.emulator',
+    device: {
+      avdName: 'Nexus_6P_API_30'
+    }
+  },
+  runnerConfig: {
+    testRunner: 'jest',
+    runnerConfig: 'e2e/config.json',
+    specs: 'e2e',
+    skipLegacyWorkersInjection: true
+  },
+  sessionConfig: {
+    autoStart: true,
+    server: 'ws://localhost:55741',
+    sessionId: '17560eb4-e90c-f722-869f-69d0fec6c37e',
+    debugSynchronization: 10000
+  }
+}
+detox[56753] DEBUG: [WSS_CREATE] Detox server listening on localhost:55741...
+detox[56753] DEBUG: [WSS_CONNECTION, #55742] registered a new connection.
+detox[56753] TRACE: [WS_OPEN] opened web socket to: ws://localhost:55741
+detox[56753] TRACE: [WS_SEND] {"type":"login","params":{"sessionId":"17560eb4-e90c-f722-869f-69d0fec6c37e","role":"tester"},"messageId":0}
+detox[56753] TRACE: [WSS_GET_FROM, #55742] {"type":"login","params":{"sessionId":"17560eb4-e90c-f722-869f-69d0fec6c37e","role":"tester"},"messageId":0}
+detox[56753] TRACE: [SESSION_CREATED] created session 17560eb4-e90c-f722-869f-69d0fec6c37e
+detox[56753] TRACE: [WSS_SEND_TO, #tester] {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+detox[56753] TRACE: [SESSION_JOINED] tester joined session 17560eb4-e90c-f722-869f-69d0fec6c37e
+detox[56753] TRACE: [WS_MESSAGE] {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+ 
+detox[56753] DEBUG: [EXEC_CMD, #0] "/Users/stefan/Library/Android/sdk/emulator/emulator" -list-avds --verbose
+detox[56753] TRACE: [EXEC_SUCCESS, #0] Nexus_6P_API_30
+Pixel_3a_API_31_arm64-v8a
+
+detox[56753] DEBUG: [EXEC_CMD, #1] "/Users/stefan/Library/Android/sdk/emulator/emulator" -version 
+detox[56753] TRACE: [EXEC_SUCCESS, #1] Android emulator version 30.8.4.0 (build_id 7600983) (CL:N/A)
+Copyright (C) 2006-2017 The Android Open Source Project and many others.
+This program is a derivative of the QEMU CPU emulator (www.qemu.org).
+
+  This software is licensed under the terms of the GNU General Public
+  License version 2, as published by the Free Software Foundation, and
+  may be copied, distributed, and modified under those terms.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+
+detox[56753] DEBUG: [EMU_BIN_VERSION_DETECT] Detected emulator binary version { major: 30, minor: 8, patch: 4, toString: [Function: toString] }
+detox[56753] DEBUG: [ALLOCATE_DEVICE] Trying to allocate a device based on "Nexus_6P_API_30"
+detox[56753] DEBUG: [EXEC_CMD, #2] "/Users/stefan/Library/Android/sdk/platform-tools/adb"  devices
+detox[56753] DEBUG: [EXEC_SUCCESS, #2] List of devices attached
+emulator-5554	device
+
+
+detox[56753] TRACE: [TELNET_CONNECTING] port: 5554, host: localhost
+detox[56753] DEBUG: [DEVICE_LOOKUP] Found a matching & free device emulator-5554
+detox[56753] DEBUG: [ALLOCATE_DEVICE] Settled on emulator-5554
+detox[56753] DEBUG: [EXEC_CMD, #3] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "getprop dev.bootcomplete"
+detox[56753] TRACE: [EXEC_SUCCESS, #3] 1
+
+detox[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBootDevice({ coldBoot: false, deviceId: 'emulator-5554', type: 'Nexus_6P_API_30' })
+detox[56753] DEBUG: [EXEC_CMD, #4] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "getprop ro.build.version.sdk"
+detox[56753] TRACE: [EXEC_SUCCESS, #4] 30
+
+detox[56753] DEBUG: [EXEC_CMD, #5] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "settings put global animator_duration_scale 0"
+detox[56753] TRACE: [EXEC_SUCCESS, #5] 
+detox[56753] DEBUG: [EXEC_CMD, #6] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "settings put global window_animation_scale 0"
+detox[56753] TRACE: [EXEC_SUCCESS, #6] 
+detox[56753] DEBUG: [EXEC_CMD, #7] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "settings put global transition_animation_scale 0"
+detox[56753] TRACE: [EXEC_SUCCESS, #7] 
+detox[56753] DEBUG: [EXEC_CMD, #8] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "dumpsys power | grep \"^[ ]*m[UW].*=\""
+detox[56753] TRACE: [EXEC_SUCCESS, #8]   mWakefulness=Awake
+  mWakefulnessChanging=false
+  mWakeLockSummary=0x1
+  mUserActivitySummary=0x1
+  mWakeUpWhenPluggedOrUnpluggedConfig=false
+  mWakeUpWhenPluggedOrUnpluggedInTheaterModeConfig=false
+  mUserActivityTimeoutOverrideFromWindowManager=-1
+  mUserInactiveOverrideFromWindowManager=false
+  mUserId=0
+
+detox[56753] DEBUG: [EXEC_CMD, #9] "/Users/stefan/Library/Android/sdk/build-tools/31.0.0/aapt" dump badging "/Users/stefan/development/react-native-e2e/android/app/build/outputs/apk/release/app-release.apk" | grep -e "package: name="
+detox[56753] TRACE: [EXEC_SUCCESS, #9] package: name='com.rne2e' versionCode='1' versionName='1.0' compileSdkVersion='30' compileSdkVersionCodename='11'
+
+detox[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeTerminateApp({ deviceId: 'emulator-5554', bundleId: 'com.rne2e' })
+detox[56753] DEBUG: [EXEC_CMD, #10] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "am force-stop com.rne2e"
+detox[56753] TRACE: [EXEC_SUCCESS, #10] 
+detox[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onTerminateApp({ deviceId: 'emulator-5554', bundleId: 'com.rne2e' })
+detox[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeUninstallApp({ deviceId: 'emulator-5554', bundleId: 'com.rne2e' })
+detox[56753] DEBUG: [EXEC_CMD, #11] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "pm list packages com.rne2e"
+detox[56753] TRACE: [EXEC_SUCCESS, #11] package:com.rne2e
+package:com.rne2e.test
+
+detox[56753] DEBUG: [EXEC_CMD, #12] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 uninstall com.rne2e
+detox[56753] TRACE: [EXEC_SUCCESS, #12] Success
+
+detox[56753] DEBUG: [EXEC_CMD, #13] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "pm list packages com.rne2e.test"
+detox[56753] TRACE: [EXEC_SUCCESS, #13] package:com.rne2e.test
+
+detox[56753] DEBUG: [EXEC_CMD, #14] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 uninstall com.rne2e.test
+detox[56753] TRACE: [EXEC_SUCCESS, #14] Success
+
+detox[56753] DEBUG: [EXEC_CMD, #15] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "rm -fr /data/local/tmp/detox"
+detox[56753] TRACE: [EXEC_SUCCESS, #15] 
+detox[56753] DEBUG: [EXEC_CMD, #16] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "mkdir -p /data/local/tmp/detox"
+detox[56753] TRACE: [EXEC_SUCCESS, #16] 
+detox[56753] DEBUG: [EXEC_CMD, #17] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 push "/Users/stefan/development/react-native-e2e/android/app/build/outputs/apk/release/app-release.apk" "/data/local/tmp/detox/Application.apk"
+detox[56753] TRACE: [EXEC_SUCCESS, #17] /Users/stefan/development/react-native-e2e/android/app/build/outputs/apk/release/app-release.apk: 1 file pushed, 0 skipped. 278.6 MB/s (31490193 bytes in 0.108s)
+
+detox[56753] DEBUG: [EXEC_CMD, #18] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "pm install -r -g -t /data/local/tmp/detox/Application.apk"
+detox[56753] TRACE: [EXEC_SUCCESS, #18] Success
+
+detox[56753] DEBUG: [EXEC_CMD, #19] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 push "/Users/stefan/development/react-native-e2e/android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk" "/data/local/tmp/detox/Test.apk"
+detox[56753] TRACE: [EXEC_SUCCESS, #19] /Users/stefan/development/react-native-e2e/android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk: 1 file pushed, 0 skipped. 7.5 MB/s (8548 bytes in 0.001s)
+
+detox[56753] DEBUG: [EXEC_CMD, #20] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "pm install -r -g -t /data/local/tmp/detox/Test.apk"
+detox[56753] TRACE: [EXEC_SUCCESS, #20] Success
+
+ROOT_DESCRIBE_BLOCK[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onRunDescribeStart({ name: 'ROOT_DESCRIBE_BLOCK' })
+Example[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onRunDescribeStart({ name: 'Example' })
+detox[56753] INFO:  [97mExample[39m is assigned to [94memulator-5554 (Nexus_6P_API_30)[39m
+detox[56753] INFO:  at e2e/firstTest.e2e.js:11:21 
+ await device launchapp
+detox[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeTerminateApp({ deviceId: 'emulator-5554', bundleId: 'com.rne2e' })
+detox[56753] DEBUG: [EXEC_CMD, #21] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "am force-stop com.rne2e"
+detox[56753] TRACE: [EXEC_SUCCESS, #21] 
+detox[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onTerminateApp({ deviceId: 'emulator-5554', bundleId: 'com.rne2e' })
+detox[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeLaunchApp({
+  deviceId: 'emulator-5554',
+  bundleId: 'com.rne2e',
+  launchArgs: {
+    detoxServer: 'ws://localhost:55741',
+    detoxSessionId: '17560eb4-e90c-f722-869f-69d0fec6c37e'
+  }
+})
+detox[56753] DEBUG: [EXEC_CMD, #22] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "date +\"%m-%d %T.000\""
+detox[56753] TRACE: [EXEC_SUCCESS, #22] 09-26 21:25:28.000
+
+detox[56753] DEBUG: [EXEC_CMD, #23] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 reverse tcp:55741 tcp:55741
+detox[56753] TRACE: [EXEC_SUCCESS, #23] 55741
+
+detox[56753] DEBUG: [EXEC_CMD, #24] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "pm list instrumentation"
+detox[56753] TRACE: [EXEC_SUCCESS, #24] instrumentation:com.irecommend.test/androidx.test.runner.AndroidJUnitRunner (target=com.irecommend)
+instrumentation:com.rne2e.test/android.test.InstrumentationTestRunner (target=com.rne2e)
+
+detox[56753] DEBUG: [SPAWN_CMD, #56786] /Users/stefan/Library/Android/sdk/platform-tools/adb -s emulator-5554 shell am instrument -w -r -e detoxServer ws://localhost:55741 -e detoxSessionId 17560eb4-e90c-f722-869f-69d0fec6c37e -e debug false com.rne2e.test/android.test.InstrumentationTestRunner
+detox[56753] DEBUG: [EXEC_CMD, #25] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "ps | grep \"com\.rne2e$\""
+detox[56753] TRACE: [EXEC_SUCCESS, #25] u0_a175       15759    299 13765192 153568 0                  0 R com.rne2e
+
+detox[15759] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onLaunchApp({
+  deviceId: 'emulator-5554',
+  bundleId: 'com.rne2e',
+  launchArgs: {
+    detoxServer: 'ws://localhost:55741',
+    detoxSessionId: '17560eb4-e90c-f722-869f-69d0fec6c37e'
+  },
+  pid: 15759
+})
+detox[56753] TRACE: [ARTIFACT_START] starting ADBLogcatRecording
+detox[56753] DEBUG: [SPAWN_CMD, #56790] /Users/stefan/Library/Android/sdk/platform-tools/adb -s emulator-5554 shell "logcat -T \"09-26 21:25:28.000\" --pid=15759 -f /sdcard/212528294_0.log"
+detox[56753] DEBUG: [EXEC_CMD, #26] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell du /sdcard/212528294_0.log
+detox[56753] TRACE: [EXEC_SUCCESS, #26] 4	/sdcard/212528294_0.log
+
+detox[56753] TRACE: [SPAWN_STDOUT, #56786] INSTRUMENTATION_RESULT: stream=
+Test results for InstrumentationTestRunner=
+Time: 0.0
+
+OK (0 tests)
+
+
+INSTRUMENTATION_CODE: -1
+
+detox[56753] DEBUG: [SPAWN_END, #56786] /Users/stefan/Library/Android/sdk/platform-tools/adb -s emulator-5554 shell am instrument -w -r -e detoxServer ws://localhost:55741 -e detoxSessionId 17560eb4-e90c-f722-869f-69d0fec6c37e -e debug false com.rne2e.test/android.test.InstrumentationTestRunner finished with code = 0
+detox[56753] DEBUG: [EXEC_CMD, #27] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 reverse --remove tcp:55741
+detox[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onHookFailure({
+  error: DetoxRuntimeError: Failed to run application on the device
+  
+  HINT: Most likely, your tests have timed out and called detox.cleanup() while it was waiting for "ready" message (over WebSocket) from the instrumentation process.
+      at _callee$ (/Users/stefan/development/react-native-e2e/e2e/firstTest.e2e.js:4:18)
+      at tryCatch (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:63:40)
+      at Generator.invoke [as _invoke] (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:294:22)
+      at Generator.next (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:119:21)
+      at tryCatch (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:63:40)
+      at invoke (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:155:20)
+      at /Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:190:11
+      at new Promise (<anonymous>)
+      at callInvokeWithMethodAndArg (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:189:16)
+      at AsyncIterator.enqueue (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:212:13)
+      at AsyncIterator.next (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:119:21)
+      at Object.<anonymous>.exports.async (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:239:14)
+      at _callee (/Users/stefan/development/react-native-e2e/e2e/firstTest.e2e.js:2:13)
+      at Promise.then.completed (/Users/stefan/development/react-native-e2e/node_modules/jest-circus/build/utils.js:390:28),
+  hook: 'beforeAll'
+})
+detox[56753] INFO:  [1m[37mExample: [39m[22m[90mshould have welcome screen[39m
+detox[56753] INFO:  [1m[37mExample: [39m[22m[90mshould have welcome screen[39m[90m [[31mFAIL[90m][39m
+detox[56753] INFO:  [1m[37mExample: [39m[22m[90mshould show hello screen after tap[39m
+detox[56753] INFO:  [1m[37mExample: [39m[22m[90mshould show hello screen after tap[39m[90m [[31mFAIL[90m][39m
+detox[56753] INFO:  [1m[37mExample: [39m[22m[90mshould show world screen after tap[39m
+detox[56753] INFO:  [1m[37mExample: [39m[22m[90mshould show world screen after tap[39m[90m [[31mFAIL[90m][39m
+Example[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onRunDescribeFinish({ name: 'Example' })
+ROOT_DESCRIBE_BLOCK[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onRunDescribeFinish({ name: 'ROOT_DESCRIBE_BLOCK' })
+detox[56753] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeCleanup()
+detox[56753] TRACE: [EXEC_SUCCESS, #27] 
+detox[56753] TRACE: [ARTIFACT_SAVE] saving ADBLogcatRecording to: artifacts/android.release.2021-09-26 19-25-27Z/emulator-5554 2021-09-26 19-25-44Z.startup.log
+detox[56753] TRACE: [ARTIFACT_STOP] stopping ADBLogcatRecording
+detox[56753] DEBUG: [EXEC_CMD, #28] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "date +\"%m-%d %T.000\""
+detox[56753] TRACE: [EXEC_SUCCESS, #28] 09-26 21:25:43.000
+
+detox[56753] TRACE: [SPAWN_KILL, #56790] sending SIGINT to: /Users/stefan/Library/Android/sdk/platform-tools/adb -s emulator-5554 shell logcat -T "09-26 21:25:28.000" --pid=15759 -f /sdcard/212528294_0.log
+detox[56753] DEBUG: [SPAWN_END, #56790] /Users/stefan/Library/Android/sdk/platform-tools/adb -s emulator-5554 shell "logcat -T \"09-26 21:25:28.000\" --pid=15759 -f /sdcard/212528294_0.log" terminated with SIGINT
+detox[56753] DEBUG: [EXEC_CMD, #29] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 pull "/sdcard/212528294_0.log" "artifacts/android.release.2021-09-26 19-25-27Z/emulator-5554 2021-09-26 19-25-44Z.startup.log"
+detox[56753] TRACE: [EXEC_SUCCESS, #29] /sdcard/212528294_0.log: 1 file pulled, 0 skipped. 1.7 MB/s (4826 bytes in 0.003s)
+
+detox[56753] DEBUG: [EXEC_CMD, #30] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-5554 shell "rm  \"/sdcard/212528294_0.log\""
+detox[56753] TRACE: [EXEC_SUCCESS, #30] 
+detox[56753] TRACE: [ARTIFACT_START] starting FileArtifact
+detox[56753] TRACE: [ARTIFACT_STOP] stopping FileArtifact
+detox[56753] TRACE: [ARTIFACT_SAVE] saving FileArtifact to: artifacts/android.release.2021-09-26 19-25-27Z/detox_pid_56753.json.log { append: true }
+detox[56753] TRACE: [ARTIFACT_START] starting FileArtifact
+detox[56753] TRACE: [ARTIFACT_STOP] stopping FileArtifact
+detox[56753] TRACE: [ARTIFACT_SAVE] saving FileArtifact to: artifacts/android.release.2021-09-26 19-25-27Z/detox_pid_56753.log { append: true }
+detox[56753] DEBUG: [MOVE_FILE] moving "/private/var/folders/5p/_73b2bf53j3bhzvg4cm7r9b80000gn/T/ef2535dd-1a31-427a-a910-0d6a0bf52740.detox.log" to artifacts/android.release.2021-09-26 19-25-27Z/detox_pid_56753.log
+detox[56753] DEBUG: [MOVE_FILE] moving "/private/var/folders/5p/_73b2bf53j3bhzvg4cm7r9b80000gn/T/c1350537-dae9-48f3-86d2-66cc8b67e4ea.detox.log" to artifacts/android.release.2021-09-26 19-25-27Z/detox_pid_56753.json.log
+detox[56753] ERROR: [APP_UNREACHABLE] Detox can't seem to connect to the test app(s)!
+
+HINT: 
+
+The test app might have crashed prematurely, or has had trouble setting up the connection.
+Refer to our troubleshooting guide, for full details: https://github.com/wix/Detox/blob/master/docs/Troubleshooting.RunningTests.md#tests-execution-hangs 
+
+
+
+detox[56753] DEBUG: [WSS_CLOSE] Detox server has been closed gracefully
+detox[56753] TRACE: [SESSION_TORN] tester exited session 17560eb4-e90c-f722-869f-69d0fec6c37e

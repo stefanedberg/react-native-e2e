@@ -1,0 +1,582 @@
+detox[56907] TRACE: [DETOX_CREATE] created a Detox instance with config:
+{
+  artifactsConfig: {
+    rootDir: 'artifacts/android.release.2021-09-26 19-26-50Z',
+    plugins: {
+      log: {
+        enabled: true,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      screenshot: {
+        enabled: true,
+        shouldTakeAutomaticSnapshots: false,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      video: {
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      instruments: {
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      timeline: {
+        enabled: false
+      },
+      uiHierarchy: {
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false
+      }
+    },
+    pathBuilder: ArtifactPathBuilder {
+      _rootDir: 'artifacts/android.release.2021-09-26 19-26-50Z'
+    }
+  },
+  appsConfig: {
+    default: {
+      type: 'android.apk',
+      binaryPath: 'android/app/build/outputs/apk/release/app-release.apk',
+      build: 'cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd ..'
+    }
+  },
+  behaviorConfig: {
+    init: {
+      reinstallApp: true,
+      exposeGlobals: true
+    },
+    cleanup: {
+      shutdownDevice: false
+    },
+    launchApp: 'auto'
+  },
+  cliConfig: {
+    recordLogs: 'all',
+    configuration: 'android.release',
+    forceAdbInstall: 'false',
+    useCustomLogger: 'true'
+  },
+  deviceConfig: {
+    type: 'android.emulator',
+    device: {
+      avdName: 'Nexus_6P_API_30'
+    }
+  },
+  runnerConfig: {
+    testRunner: 'jest',
+    runnerConfig: 'e2e/config.json',
+    specs: 'e2e',
+    skipLegacyWorkersInjection: true
+  },
+  sessionConfig: {
+    autoStart: true,
+    server: 'ws://localhost:55875',
+    sessionId: '1377c6dc-7143-c6d1-d412-f305023a284d',
+    debugSynchronization: 10000
+  }
+}
+detox[56907] DEBUG: [WSS_CREATE] Detox server listening on localhost:55875...
+detox[56907] DEBUG: [WSS_CONNECTION, #55876] registered a new connection.
+detox[56907] TRACE: [WS_OPEN] opened web socket to: ws://localhost:55875
+detox[56907] TRACE: [WS_SEND] {"type":"login","params":{"sessionId":"1377c6dc-7143-c6d1-d412-f305023a284d","role":"tester"},"messageId":0}
+detox[56907] TRACE: [WSS_GET_FROM, #55876] {"type":"login","params":{"sessionId":"1377c6dc-7143-c6d1-d412-f305023a284d","role":"tester"},"messageId":0}
+detox[56907] TRACE: [SESSION_CREATED] created session 1377c6dc-7143-c6d1-d412-f305023a284d
+detox[56907] TRACE: [WSS_SEND_TO, #tester] {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+detox[56907] TRACE: [SESSION_JOINED] tester joined session 1377c6dc-7143-c6d1-d412-f305023a284d
+detox[56907] TRACE: [WS_MESSAGE] {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+ 
+detox[56907] DEBUG: [EXEC_CMD, #0] "/Users/stefan/Library/Android/sdk/emulator/emulator" -list-avds --verbose
+detox[56907] TRACE: [EXEC_SUCCESS, #0] Nexus_6P_API_30
+Pixel_3a_API_31_arm64-v8a
+
+detox[56907] DEBUG: [EXEC_CMD, #1] "/Users/stefan/Library/Android/sdk/emulator/emulator" -version 
+detox[56907] TRACE: [EXEC_SUCCESS, #1] Android emulator version 30.8.4.0 (build_id 7600983) (CL:N/A)
+Copyright (C) 2006-2017 The Android Open Source Project and many others.
+This program is a derivative of the QEMU CPU emulator (www.qemu.org).
+
+  This software is licensed under the terms of the GNU General Public
+  License version 2, as published by the Free Software Foundation, and
+  may be copied, distributed, and modified under those terms.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+
+detox[56907] DEBUG: [EMU_BIN_VERSION_DETECT] Detected emulator binary version { major: 30, minor: 8, patch: 4, toString: [Function: toString] }
+detox[56907] DEBUG: [ALLOCATE_DEVICE] Trying to allocate a device based on "Nexus_6P_API_30"
+detox[56907] DEBUG: [EXEC_CMD, #2] "/Users/stefan/Library/Android/sdk/platform-tools/adb"  devices
+detox[56907] DEBUG: [EXEC_SUCCESS, #2] List of devices attached
+
+
+detox[56907] DEBUG: [ALLOCATE_DEVICE] Settled on emulator-14432
+detox[56907] DEBUG: [SPAWN_CMD] /Users/stefan/Library/Android/sdk/emulator/emulator -verbose -no-audio -no-boot-anim -port 14432 @Nexus_6P_API_30
+detox[56907] DEBUG: [SPAWN_SUCCESS] handleCpuAcceleration: feature check for hvf
+cannot add library /Users/stefan/Library/Android/sdk/emulator/qemu/darwin-aarch64/lib64/vulkan/libvulkan.dylib: failed
+cannot add library /Users/stefan/Library/Android/sdk/emulator/lib64/vulkan/libvulkan.dylib: failed
+cannot add library /Users/stefan/Library/Android/sdk/emulator/qemu/darwin-aarch64/lib64/vulkan/libMoltenVK.dylib: failed
+added library /Users/stefan/Library/Android/sdk/emulator/lib64/vulkan/libMoltenVK.dylib
+createOrGetGlobalVkEmulation: warning: instance doesn't support external memory capabilities, picking first physical device
+emulator: autoconfig: -skin 1440x2560
+emulator: autoconfig: -skindir (null)
+emulator: autoconfig: -kernel /Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//kernel-ranchu
+emulator: Target arch = 'arm64'
+emulator: Auto-detect: Kernel image requires new device naming scheme.
+emulator: Auto-detect: Kernel does not support YAFFS2 partitions.
+emulator: autoconfig: -ramdisk /Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//ramdisk.img
+emulator: Using initial system image: /Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//system.img
+emulator: Using initial vendor image: /Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//vendor.img
+emulator: autoconfig: -data /Users/stefan/.android/avd/Nexus_6P_API_30.avd/userdata-qemu.img
+emulator: autoconfig: -initdata /Users/stefan/.android/avd/Nexus_6P_API_30.avd/userdata.img
+emulator: autoconfig: -cache /Users/stefan/.android/avd/Nexus_6P_API_30.avd/cache.img
+emulator: INFO: ignore sdcard for arm at api level >= 30
+emulator: Increasing RAM size to 2048MB
+emulator: VM heap size 384MB is below hardware specified minimum of 512MB,setting it to that value
+emulator: System image is read only
+emulator: Found 1 DNS servers: 192.168.1.1
+emulator: VERBOSE: FeatureControlImpl.cpp:172: WARNING: unexpected system image feature string, emulator might not function correctly, please try updating the emulator.
+
+emulator: VERBOSE: FeatureControlImpl.cpp:175: Unexpected feature list:
+
+emulator: VERBOSE: FeatureControlImpl.cpp:177: Vulkan
+emulator: VERBOSE: FeatureControlImpl.cpp:179: 
+
+emulator: found magic skin width=1440 height=2560 bpp=16
+
+emulator: Requested console port 14432: Inferring adb port 14433.
+emulator: CPU Acceleration: working
+emulator: CPU Acceleration status: Hypervisor.Framework OS X Version 11.5
+emulator: registered 'boot-properties' qemud service
+emulator: Adding boot property: 'qemu.cmdline' = 'androidboot.logcat=*:V androidboot.consolepipe=qemu_pipe,pipe:logcat'
+emulator: Adding boot property: 'qemu.logcat' = 'start'
+emulator: GPU emulation enabled using 'host' mode
+emulator: Initializing hardware OpenGLES emulation support
+emulator: VERBOSE: MultiDisplay.cpp:341: create display 0
+emulator: VERBOSE: MultiDisplay.cpp:435: setDisplayPose 0 x 0 y 0 w 1440 h 2560 dpi 0
+emulator: INFO: ignore sdcard for arm at api level >= 30
+emulator: Found 1 DNS servers: 192.168.1.1
+Content of hardware configuration file:
+  hw.cpu.arch = arm64
+  hw.cpu.ncore = 4
+  hw.ramSize = 2048
+  hw.screen = multi-touch
+  hw.mainKeys = false
+  hw.trackBall = false
+  hw.keyboard = true
+  hw.keyboard.lid = false
+  hw.keyboard.charmap = qwerty2
+  hw.dPad = false
+  hw.rotaryInput = false
+  hw.gsmModem = true
+  hw.gps = true
+  hw.battery = true
+  hw.accelerometer = true
+  hw.gyroscope = true
+  hw.audioInput = true
+  hw.audioOutput = true
+  hw.sdCard = true
+  disk.cachePartition = true
+  disk.cachePartition.path = /Users/stefan/.android/avd/Nexus_6P_API_30.avd/cache.img
+  disk.cachePartition.size = 66m
+  test.quitAfterBootTimeOut = -1
+  test.delayAdbTillBootComplete = 0
+  test.monitorAdb = 0
+  hw.lcd.width = 1440
+  hw.lcd.height = 2560
+  hw.lcd.depth = 16
+  hw.lcd.density = 560
+  hw.lcd.backlight = true
+  hw.lcd.vsync = 60
+  hw.gltransport = pipe
+  hw.gltransport.asg.writeBufferSize = 1048576
+  hw.gltransport.asg.writeStepSize = 4096
+  hw.gltransport.asg.dataRingSize = 32768
+  hw.gltransport.drawFlushInterval = 800
+  hw.displayRegion.0.1.xOffset = -1
+  hw.displayRegion.0.1.yOffset = -1
+  hw.displayRegion.0.1.width = 0
+  hw.displayRegion.0.1.height = 0
+  hw.displayRegion.0.2.xOffset = -1
+  hw.displayRegion.0.2.yOffset = -1
+  hw.displayRegion.0.2.width = 0
+  hw.displayRegion.0.2.height = 0
+  hw.displayRegion.0.3.xOffset = -1
+  hw.displayRegion.0.3.yOffset = -1
+  hw.displayRegion.0.3.width = 0
+  hw.displayRegion.0.3.height = 0
+  hw.display1.width = 0
+  hw.display1.height = 0
+  hw.display1.density = 0
+  hw.display1.xOffset = -1
+  hw.display1.yOffset = -1
+  hw.display1.flag = 0
+  hw.display2.width = 0
+  hw.display2.height = 0
+  hw.display2.density = 0
+  hw.display2.xOffset = -1
+  hw.display2.yOffset = -1
+  hw.display2.flag = 0
+  hw.display3.width = 0
+  hw.display3.height = 0
+  hw.display3.density = 0
+  hw.display3.xOffset = -1
+  hw.display3.yOffset = -1
+  hw.display3.flag = 0
+  hw.gpu.enabled = true
+  hw.gpu.mode = host
+  hw.initialOrientation = Portrait
+  hw.camera.back = virtualscene
+  hw.camera.front = emulated
+  vm.heapSize = 512
+  hw.sensors.light = true
+  hw.sensors.pressure = true
+  hw.sensors.humidity = true
+  hw.sensors.proximity = true
+  hw.sensors.magnetic_field = true
+  hw.sensors.magnetic_field_uncalibrated = true
+  hw.sensors.gyroscope_uncalibrated = true
+  hw.sensors.orientation = true
+  hw.sensors.temperature = true
+  hw.sensor.hinge = true
+  hw.sensor.hinge.count = 0
+  hw.sensor.hinge.type = 0
+  hw.sensor.hinge.sub_type = 0
+  hw.sensor.hinge.fold_to_displayRegion.0.1_at_posture = 1
+  hw.sensor.roll = false
+  hw.sensor.roll.count = 0
+  hw.sensor.roll.resize_to_displayRegion.0.1_at_posture = 6
+  hw.sensor.roll.resize_to_displayRegion.0.2_at_posture = 6
+  hw.sensor.roll.resize_to_displayRegion.0.3_at_posture = 6
+  hw.sensors.heart_rate = false
+  hw.useext4 = true
+  hw.arc = false
+  hw.arc.autologin = false
+  kernel.path = /Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//kernel-ranchu
+  kernel.newDeviceNaming = yes
+  kernel.supportsYaffs2 = no
+  disk.ramdisk.path = /Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//ramdisk.img
+  disk.systemPartition.initPath = /Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//system.img
+  disk.systemPartition.size = 3083m
+  disk.vendorPartition.initPath = /Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//vendor.img
+  disk.vendorPartition.size = 800m
+  disk.dataPartition.path = /Users/stefan/.android/avd/Nexus_6P_API_30.avd/userdata-qemu.img
+  disk.dataPartition.size = 800m
+  disk.encryptionKeyPartition.path = /Users/stefan/.android/avd/Nexus_6P_API_30.avd/encryptionkey.img
+  PlayStore.enabled = false
+  avd.name = Nexus_6P_API_30
+  avd.id = Nexus_6P_API_30
+  fastboot.forceColdBoot = false
+  android.sdk.root = /Users/stefan/Library/Android/sdk
+  android.avd.home = /Users/stefan/.android/avd
+.
+QEMU options list:
+emulator: argv[00] = "/Users/stefan/Library/Android/sdk/emulator/qemu/darwin-aarch64/qemu-system-aarch64"
+emulator: argv[01] = "-dns-server"
+emulator: argv[02] = "192.168.1.1"
+emulator: argv[03] = "-no-audio"
+emulator: argv[04] = "-serial"
+emulator: argv[05] = "null"
+emulator: argv[06] = "-android-ports"
+emulator: argv[07] = "14432,14433"
+emulator: argv[08] = "-cpu"
+emulator: argv[09] = "cortex-a53"
+emulator: argv[10] = "-machine"
+emulator: argv[11] = "type=virt"
+emulator: argv[12] = "-enable-hvf"
+emulator: argv[13] = "-smp"
+emulator: argv[14] = "cores=4"
+emulator: argv[15] = "-m"
+emulator: argv[16] = "2048"
+emulator: argv[17] = "-lcd-density"
+emulator: argv[18] = "560"
+emulator: argv[19] = "-nodefaults"
+emulator: argv[20] = "-kernel"
+emulator: argv[21] = "/Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//kernel-ranchu"
+emulator: argv[22] = "-initrd"
+emulator: argv[23] = "/Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//ramdisk.img"
+emulator: argv[24] = "-drive"
+emulator: argv[25] = "index=0,id=vendor,if=none,file=/Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//vendor.img,read-only"
+emulator: argv[26] = "-device"
+emulator: argv[27] = "virtio-blk-device,drive=vendor"
+emulator: argv[28] = "-drive"
+emulator: argv[29] = "index=1,id=encrypt,if=none,file=/Users/stefan/.android/avd/Nexus_6P_API_30.avd/encryptionkey.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576"
+emulator: argv[30] = "-device"
+emulator: argv[31] = "virtio-blk-device,drive=encrypt"
+emulator: argv[32] = "-drive"
+emulator: argv[33] = "index=2,id=userdata,if=none,file=/Users/stefan/.android/avd/Nexus_6P_API_30.avd/userdata-qemu.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576"
+emulator: argv[34] = "-device"
+emulator: argv[35] = "virtio-blk-device,drive=userdata"
+emulator: argv[36] = "-drive"
+emulator: argv[37] = "index=3,id=cache,if=none,file=/Users/stefan/.android/avd/Nexus_6P_API_30.avd/cache.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576"
+emulator: argv[38] = "-device"
+emulator: argv[39] = "virtio-blk-device,drive=cache"
+emulator: argv[40] = "-drive"
+emulator: argv[41] = "index=4,id=system,if=none,file=/Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//system.img,read-only"
+emulator: argv[42] = "-device"
+emulator: argv[43] = "virtio-blk-device,drive=system"
+emulator: argv[44] = "-netdev"
+emulator: argv[45] = "user,id=mynet"
+emulator: argv[46] = "-device"
+emulator: argv[47] = "virtio-net-device,netdev=mynet"
+emulator: argv[48] = "-device"
+emulator: argv[49] = "virtio-rng-device"
+emulator: argv[50] = "-show-cursor"
+emulator: argv[51] = "-device"
+emulator: argv[52] = "virtio_input_multi_touch_pci_1"
+emulator: argv[53] = "-device"
+emulator: argv[54] = "virtio_input_multi_touch_pci_2"
+emulator: argv[55] = "-device"
+emulator: argv[56] = "virtio_input_multi_touch_pci_3"
+emulator: argv[57] = "-device"
+emulator: argv[58] = "virtio_input_multi_touch_pci_4"
+emulator: argv[59] = "-device"
+emulator: argv[60] = "virtio_input_multi_touch_pci_5"
+emulator: argv[61] = "-device"
+emulator: argv[62] = "virtio_input_multi_touch_pci_6"
+emulator: argv[63] = "-device"
+emulator: argv[64] = "virtio_input_multi_touch_pci_7"
+emulator: argv[65] = "-device"
+emulator: argv[66] = "virtio_input_multi_touch_pci_8"
+emulator: argv[67] = "-device"
+emulator: argv[68] = "virtio_input_multi_touch_pci_9"
+emulator: argv[69] = "-device"
+emulator: argv[70] = "virtio_input_multi_touch_pci_10"
+emulator: argv[71] = "-device"
+emulator: argv[72] = "virtio_input_multi_touch_pci_11"
+emulator: argv[73] = "-device"
+emulator: argv[74] = "virtio-keyboard-pci"
+emulator: argv[75] = "-L"
+emulator: argv[76] = "/Users/stefan/Library/Android/sdk/emulator/lib/pc-bios"
+emulator: argv[77] = "-soundhw"
+emulator: argv[78] = "hda"
+emulator: argv[79] = "-append"
+emulator: argv[80] = "no_timer_check keep_bootcon earlyprintk=ttyAMA0 console=0 cma=314M@0-4G mac80211_hwsim.channels=2 loop.max_part=7 printk.devkmsg=on qemu=1 androidboot.hardware=ranchu androidboot.serialno=EMULATOR30X8X4X0 android.bootanim=0 qemu.gles=1 qemu.settings.system.screen_off_timeout=2147483647 qemu.encrypt=1 qemu.vsync=60 qemu.gltransport=pipe qemu.gltransport.drawFlushInterval=800 qemu.opengles.version=196608 qemu.uirenderer=skiagl qemu.dalvik.vm.heapsize=512m qemu.camera_protocol_ver=1 androidboot.vbmeta.size=6720 androidboot.vbmeta.hash_alg=sha256 androidboot.vbmeta.digest=411b733c9669903383d04e2ce920d1e07f8d93bf64366b1933af88bd1a30423a androidboot.boot_devices=a003600.virtio_mmio qemu.wifi=1 android.qemud=1 qemu.avd_name=Nexus_6P_API_30"
+emulator: argv[81] = "-android-hw"
+emulator: argv[82] = "/Users/stefan/.android/avd/Nexus_6P_API_30.avd/hardware-qemu.ini"
+Concatenated QEMU options:
+ /Users/stefan/Library/Android/sdk/emulator/qemu/darwin-aarch64/qemu-system-aarch64 -dns-server 192.168.1.1 -no-audio -serial null -android-ports 14432,14433 -cpu cortex-a53 -machine type=virt -enable-hvf -smp cores=4 -m 2048 -lcd-density 560 -nodefaults -kernel /Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//kernel-ranchu -initrd /Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//ramdisk.img -drive index=0,id=vendor,if=none,file=/Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//vendor.img,read-only -device virtio-blk-device,drive=vendor -drive index=1,id=encrypt,if=none,file=/Users/stefan/.android/avd/Nexus_6P_API_30.avd/encryptionkey.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576 -device virtio-blk-device,drive=encrypt -drive index=2,id=userdata,if=none,file=/Users/stefan/.android/avd/Nexus_6P_API_30.avd/userdata-qemu.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576 -device virtio-blk-device,drive=userdata -drive index=3,id=cache,if=none,file=/Users/stefan/.android/avd/Nexus_6P_API_30.avd/cache.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576 -device virtio-blk-device,drive=cache -drive index=4,id=system,if=none,file=/Users/stefan/Library/Android/sdk/system-images/android-30/google_apis/arm64-v8a//system.img,read-only -device virtio-blk-device,drive=system -netdev user,id=mynet -device virtio-net-device,netdev=mynet -device virtio-rng-device -show-cursor -device virtio_input_multi_touch_pci_1 -device virtio_input_multi_touch_pci_2 -device virtio_input_multi_touch_pci_3 -device virtio_input_multi_touch_pci_4 -device virtio_input_multi_touch_pci_5 -device virtio_input_multi_touch_pci_6 -device virtio_input_multi_touch_pci_7 -device virtio_input_multi_touch_pci_8 -device virtio_input_multi_touch_pci_9 -device virtio_input_multi_touch_pci_10 -device virtio_input_multi_touch_pci_11 -device virtio-keyboard-pci -L /Users/stefan/Library/Android/sdk/emulator/lib/pc-bios -soundhw hda -append 'no_timer_check keep_bootcon earlyprintk=ttyAMA0 console=0 cma=314M@0-4G mac80211_hwsim.channels=2 loop.max_part=7 printk.devkmsg=on qemu=1 androidboot.hardware=ranchu androidboot.serialno=EMULATOR30X8X4X0 android.bootanim=0 qemu.gles=1 qemu.settings.system.screen_off_timeout=2147483647 qemu.encrypt=1 qemu.vsync=60 qemu.gltransport=pipe qemu.gltransport.drawFlushInterval=800 qemu.opengles.version=196608 qemu.uirenderer=skiagl qemu.dalvik.vm.heapsize=512m qemu.camera_protocol_ver=1 androidboot.vbmeta.size=6720 androidboot.vbmeta.hash_alg=sha256 androidboot.vbmeta.digest=411b733c9669903383d04e2ce920d1e07f8d93bf64366b1933af88bd1a30423a androidboot.boot_devices=a003600.virtio_mmio qemu.wifi=1 android.qemud=1 qemu.avd_name=Nexus_6P_API_30' -android-hw /Users/stefan/.android/avd/Nexus_6P_API_30.avd/hardware-qemu.ini
+emulator: Android qemu version 30.8.4.0 (build_id 7600983) (CL:N/A)
+
+emulator: Starting QEMU main loop
+emulator: Adding boot property: 'ro.opengles.version' = '196608'
+emulator: Adding boot property: 'qemu.sf.fake_camera' = 'front'
+emulator: Adding boot property: 'dalvik.vm.heapsize' = '512m'
+emulator: Adding boot property: 'qemu.hw.mainkeys' = '0'
+emulator: Adding boot property: 'qemu.sf.lcd_density' = '560'
+emulator: goldfish_events.have-dpad: false
+emulator: goldfish_events.have-trackball: false
+emulator: goldfish_events.have-camera: true
+emulator: goldfish_events.have-keyboard: false
+emulator: goldfish_events.have-lidswitch: false
+emulator: goldfish_events.have-tabletmode: false
+emulator: goldfish_events.have-touch: false
+emulator: goldfish_events.have-multitouch: false
+emulator: Adding boot property: 'net.wifi_mac_prefix' = '14432'
+emulator: WARNING: Requested adb port (14433) is outside the recommended range [5555,5586]. ADB may not function properly for the emulator. See -help-port for details.
+Not using any http proxy
+emulator: Adding boot property: 'qemu.timezone' = 'Europe/Stockholm'
+emulator: android_hw_fingerprint_init: fingerprint qemud listen service initialized
+
+emulator: emulator_window_fb_rotate
+
+emulator: VERBOSE: MultiDisplay.cpp:734: config multidisplay with config.ini 0x0 0x0 0x0
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/stefan/Library/Android/sdk/platform-tools/adb protocol version: 41
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/stefan/Library/Android/sdk/platform-tools/adb protocol version: 41
+emulator: INFO: ignore sdcard for arm at api level >= 30
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/stefan/Library/Android/sdk/platform-tools/adb protocol version: 41
+emulator: VERBOSE: AdbInterface.cpp:409: Found: 3 adb executables
+emulator: VERBOSE: AdbInterface.cpp:411: Adb: /Users/stefan/Library/Android/sdk/platform-tools/adb
+emulator: VERBOSE: AdbInterface.cpp:411: Adb: /Users/stefan/Library/Android/sdk/platform-tools/adb
+emulator: VERBOSE: AdbInterface.cpp:411: Adb: /Users/stefan/Library/Android/sdk/platform-tools/adb
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/stefan/Library/Android/sdk/platform-tools/adb protocol version: 41
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/stefan/Library/Android/sdk/platform-tools/adb protocol version: 41
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/stefan/Library/Android/sdk/platform-tools/adb protocol version: 41
+emulator: Adding boot property: 'qemu.cmdline' = 'androidboot.logcat=*:V androidboot.consolepipe=qemu_pipe,pipe:logcat'
+emulator: Adding boot property: 'qemu.logcat' = 'start'
+emulator: Adding boot property: 'ro.opengles.version' = '196608'
+emulator: Adding boot property: 'qemu.sf.fake_camera' = 'front'
+emulator: Adding boot property: 'dalvik.vm.heapsize' = '512m'
+emulator: Adding boot property: 'qemu.hw.mainkeys' = '0'
+emulator: Adding boot property: 'qemu.sf.lcd_density' = '560'
+emulator: Adding boot property: 'net.wifi_mac_prefix' = '10810'
+emulator: Adding boot property: 'qemu.timezone' = 'Europe/Stockholm'
+emulator: _hwFingerprint_connect: connect finger print listen is called
+
+emulator: VERBOSE: AndroidAsyncMessagePipe.cpp:26: Registering pipe service multidisplay
+emulator: VERBOSE: MultiDisplayPipe.cpp:33: MultiDisplayPipe created 0x1499bcaf0
+emulator: onGuestSendCommand: [0x12a6050f0] Adb connected, start proxing data
+
+detox[56907] DEBUG: [EXEC_CMD, #3] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "getprop dev.bootcomplete"
+detox[56907] TRACE: [EXEC_SUCCESS, #3] 1
+
+detox[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBootDevice({ coldBoot: true, deviceId: 'emulator-14432', type: 'Nexus_6P_API_30' })
+detox[56907] DEBUG: [EXEC_CMD, #4] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "getprop ro.build.version.sdk"
+detox[56907] TRACE: [EXEC_SUCCESS, #4] 30
+
+detox[56907] DEBUG: [EXEC_CMD, #5] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "settings put global animator_duration_scale 0"
+detox[56907] TRACE: [EXEC_SUCCESS, #5] 
+detox[56907] DEBUG: [EXEC_CMD, #6] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "settings put global window_animation_scale 0"
+detox[56907] TRACE: [EXEC_SUCCESS, #6] 
+detox[56907] DEBUG: [EXEC_CMD, #7] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "settings put global transition_animation_scale 0"
+detox[56907] TRACE: [EXEC_SUCCESS, #7] 
+detox[56907] DEBUG: [EXEC_CMD, #8] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "dumpsys power | grep \"^[ ]*m[UW].*=\""
+detox[56907] TRACE: [EXEC_SUCCESS, #8]   mWakefulness=Awake
+  mWakefulnessChanging=false
+  mWakeLockSummary=0x1
+  mUserActivitySummary=0x1
+  mWakeUpWhenPluggedOrUnpluggedConfig=false
+  mWakeUpWhenPluggedOrUnpluggedInTheaterModeConfig=false
+  mUserActivityTimeoutOverrideFromWindowManager=-1
+  mUserInactiveOverrideFromWindowManager=false
+  mUserId=0
+
+detox[56907] DEBUG: [EXEC_CMD, #9] "/Users/stefan/Library/Android/sdk/build-tools/31.0.0/aapt" dump badging "/Users/stefan/development/react-native-e2e/android/app/build/outputs/apk/release/app-release.apk" | grep -e "package: name="
+detox[56907] TRACE: [EXEC_SUCCESS, #9] package: name='com.rne2e' versionCode='1' versionName='1.0' compileSdkVersion='30' compileSdkVersionCodename='11'
+
+detox[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeTerminateApp({ deviceId: 'emulator-14432', bundleId: 'com.rne2e' })
+detox[56907] DEBUG: [EXEC_CMD, #10] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "am force-stop com.rne2e"
+detox[56907] TRACE: [EXEC_SUCCESS, #10] 
+detox[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onTerminateApp({ deviceId: 'emulator-14432', bundleId: 'com.rne2e' })
+detox[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeUninstallApp({ deviceId: 'emulator-14432', bundleId: 'com.rne2e' })
+detox[56907] DEBUG: [EXEC_CMD, #11] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "pm list packages com.rne2e"
+detox[56907] TRACE: [EXEC_SUCCESS, #11] package:com.rne2e.test
+
+detox[56907] DEBUG: [EXEC_CMD, #12] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "pm list packages com.rne2e.test"
+detox[56907] TRACE: [EXEC_SUCCESS, #12] package:com.rne2e.test
+
+detox[56907] DEBUG: [EXEC_CMD, #13] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 uninstall com.rne2e.test
+detox[56907] TRACE: [EXEC_SUCCESS, #13] Success
+
+detox[56907] DEBUG: [EXEC_CMD, #14] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "rm -fr /data/local/tmp/detox"
+detox[56907] TRACE: [EXEC_SUCCESS, #14] 
+detox[56907] DEBUG: [EXEC_CMD, #15] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "mkdir -p /data/local/tmp/detox"
+detox[56907] TRACE: [EXEC_SUCCESS, #15] 
+detox[56907] DEBUG: [EXEC_CMD, #16] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 push "/Users/stefan/development/react-native-e2e/android/app/build/outputs/apk/release/app-release.apk" "/data/local/tmp/detox/Application.apk"
+detox[56907] TRACE: [EXEC_SUCCESS, #16] /Users/stefan/development/react-native-e2e/android/app/build/outputs/apk/release/app-release.apk: 1 file pushed, 0 skipped. 291.1 MB/s (31490193 bytes in 0.103s)
+
+detox[56907] DEBUG: [EXEC_CMD, #17] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "pm install -r -g -t /data/local/tmp/detox/Application.apk"
+detox[56907] TRACE: [EXEC_SUCCESS, #17] Success
+
+detox[56907] DEBUG: [EXEC_CMD, #18] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 push "/Users/stefan/development/react-native-e2e/android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk" "/data/local/tmp/detox/Test.apk"
+detox[56907] TRACE: [EXEC_SUCCESS, #18] /Users/stefan/development/react-native-e2e/android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk: 1 file pushed, 0 skipped. 5.9 MB/s (8548 bytes in 0.001s)
+
+detox[56907] DEBUG: [EXEC_CMD, #19] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "pm install -r -g -t /data/local/tmp/detox/Test.apk"
+detox[56907] TRACE: [EXEC_SUCCESS, #19] Success
+
+ROOT_DESCRIBE_BLOCK[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onRunDescribeStart({ name: 'ROOT_DESCRIBE_BLOCK' })
+Example[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onRunDescribeStart({ name: 'Example' })
+detox[56907] INFO:  [97mExample[39m is assigned to [94memulator-14432 (Nexus_6P_API_30)[39m
+detox[56907] INFO:  at e2e/firstTest.e2e.js:11:21 
+ await device launchapp
+detox[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeTerminateApp({ deviceId: 'emulator-14432', bundleId: 'com.rne2e' })
+detox[56907] DEBUG: [EXEC_CMD, #20] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "am force-stop com.rne2e"
+detox[56907] TRACE: [EXEC_SUCCESS, #20] 
+detox[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onTerminateApp({ deviceId: 'emulator-14432', bundleId: 'com.rne2e' })
+detox[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeLaunchApp({
+  deviceId: 'emulator-14432',
+  bundleId: 'com.rne2e',
+  launchArgs: {
+    detoxServer: 'ws://localhost:55875',
+    detoxSessionId: '1377c6dc-7143-c6d1-d412-f305023a284d'
+  }
+})
+detox[56907] DEBUG: [EXEC_CMD, #21] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "date +\"%m-%d %T.000\""
+detox[56907] TRACE: [EXEC_SUCCESS, #21] 09-26 21:26:55.000
+
+detox[56907] DEBUG: [EXEC_CMD, #22] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 reverse tcp:55875 tcp:55875
+detox[56907] TRACE: [EXEC_SUCCESS, #22] 55875
+
+detox[56907] DEBUG: [EXEC_CMD, #23] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "pm list instrumentation"
+detox[56907] TRACE: [EXEC_SUCCESS, #23] instrumentation:com.irecommend.test/androidx.test.runner.AndroidJUnitRunner (target=com.irecommend)
+instrumentation:com.rne2e.test/android.test.InstrumentationTestRunner (target=com.rne2e)
+
+detox[56907] DEBUG: [SPAWN_CMD, #56951] /Users/stefan/Library/Android/sdk/platform-tools/adb -s emulator-14432 shell am instrument -w -r -e detoxServer ws://localhost:55875 -e detoxSessionId 1377c6dc-7143-c6d1-d412-f305023a284d -e debug false com.rne2e.test/android.test.InstrumentationTestRunner
+detox[56907] DEBUG: [EXEC_CMD, #24] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "ps | grep \"com\.rne2e$\""
+detox[56907] TRACE: [EXEC_SUCCESS, #24] u0_a177       16340    299 13765140 156428 0                  0 R com.rne2e
+
+detox[16340] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onLaunchApp({
+  deviceId: 'emulator-14432',
+  bundleId: 'com.rne2e',
+  launchArgs: {
+    detoxServer: 'ws://localhost:55875',
+    detoxSessionId: '1377c6dc-7143-c6d1-d412-f305023a284d'
+  },
+  pid: 16340
+})
+detox[56907] TRACE: [ARTIFACT_START] starting ADBLogcatRecording
+detox[56907] DEBUG: [SPAWN_CMD, #56959] /Users/stefan/Library/Android/sdk/platform-tools/adb -s emulator-14432 shell "logcat -T \"09-26 21:26:55.000\" --pid=16340 -f /sdcard/21265161_0.log"
+detox[56907] DEBUG: [EXEC_CMD, #25] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell du /sdcard/21265161_0.log
+detox[56907] TRACE: [EXEC_SUCCESS, #25] 4	/sdcard/21265161_0.log
+
+detox[56907] TRACE: [SPAWN_STDOUT, #56951] INSTRUMENTATION_RESULT: stream=
+Test results for InstrumentationTestRunner=
+Time: 0.0
+
+OK (0 tests)
+
+
+INSTRUMENTATION_CODE: -1
+
+detox[56907] DEBUG: [SPAWN_END, #56951] /Users/stefan/Library/Android/sdk/platform-tools/adb -s emulator-14432 shell am instrument -w -r -e detoxServer ws://localhost:55875 -e detoxSessionId 1377c6dc-7143-c6d1-d412-f305023a284d -e debug false com.rne2e.test/android.test.InstrumentationTestRunner finished with code = 0
+detox[56907] DEBUG: [EXEC_CMD, #26] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 reverse --remove tcp:55875
+detox[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onHookFailure({
+  error: DetoxRuntimeError: Failed to run application on the device
+  
+  HINT: Most likely, your tests have timed out and called detox.cleanup() while it was waiting for "ready" message (over WebSocket) from the instrumentation process.
+      at _callee$ (/Users/stefan/development/react-native-e2e/e2e/firstTest.e2e.js:4:18)
+      at tryCatch (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:63:40)
+      at Generator.invoke [as _invoke] (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:294:22)
+      at Generator.next (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:119:21)
+      at tryCatch (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:63:40)
+      at invoke (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:155:20)
+      at /Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:190:11
+      at new Promise (<anonymous>)
+      at callInvokeWithMethodAndArg (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:189:16)
+      at AsyncIterator.enqueue (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:212:13)
+      at AsyncIterator.next (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:119:21)
+      at Object.<anonymous>.exports.async (/Users/stefan/development/react-native-e2e/node_modules/regenerator-runtime/runtime.js:239:14)
+      at _callee (/Users/stefan/development/react-native-e2e/e2e/firstTest.e2e.js:2:13)
+      at Promise.then.completed (/Users/stefan/development/react-native-e2e/node_modules/jest-circus/build/utils.js:390:28),
+  hook: 'beforeAll'
+})
+detox[56907] INFO:  [1m[37mExample: [39m[22m[90mshould have welcome screen[39m
+detox[56907] INFO:  [1m[37mExample: [39m[22m[90mshould have welcome screen[39m[90m [[31mFAIL[90m][39m
+detox[56907] INFO:  [1m[37mExample: [39m[22m[90mshould show hello screen after tap[39m
+detox[56907] INFO:  [1m[37mExample: [39m[22m[90mshould show hello screen after tap[39m[90m [[31mFAIL[90m][39m
+detox[56907] INFO:  [1m[37mExample: [39m[22m[90mshould show world screen after tap[39m
+detox[56907] INFO:  [1m[37mExample: [39m[22m[90mshould show world screen after tap[39m[90m [[31mFAIL[90m][39m
+Example[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onRunDescribeFinish({ name: 'Example' })
+ROOT_DESCRIBE_BLOCK[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onRunDescribeFinish({ name: 'ROOT_DESCRIBE_BLOCK' })
+detox[56907] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeCleanup()
+detox[56907] TRACE: [EXEC_SUCCESS, #26] 
+detox[56907] TRACE: [ARTIFACT_SAVE] saving ADBLogcatRecording to: artifacts/android.release.2021-09-26 19-26-50Z/emulator-14432 2021-09-26 19-27-10Z.startup.log
+detox[56907] TRACE: [ARTIFACT_STOP] stopping ADBLogcatRecording
+detox[56907] DEBUG: [EXEC_CMD, #27] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "date +\"%m-%d %T.000\""
+detox[56907] TRACE: [EXEC_SUCCESS, #27] 09-26 21:27:09.000
+
+detox[56907] TRACE: [SPAWN_KILL, #56959] sending SIGINT to: /Users/stefan/Library/Android/sdk/platform-tools/adb -s emulator-14432 shell logcat -T "09-26 21:26:55.000" --pid=16340 -f /sdcard/21265161_0.log
+detox[56907] DEBUG: [SPAWN_END, #56959] /Users/stefan/Library/Android/sdk/platform-tools/adb -s emulator-14432 shell "logcat -T \"09-26 21:26:55.000\" --pid=16340 -f /sdcard/21265161_0.log" terminated with SIGINT
+detox[56907] DEBUG: [EXEC_CMD, #28] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 pull "/sdcard/21265161_0.log" "artifacts/android.release.2021-09-26 19-26-50Z/emulator-14432 2021-09-26 19-27-10Z.startup.log"
+detox[56907] TRACE: [EXEC_SUCCESS, #28] /sdcard/21265161_0.log: 1 file pulled, 0 skipped. 7.0 MB/s (8705 bytes in 0.001s)
+
+detox[56907] DEBUG: [EXEC_CMD, #29] "/Users/stefan/Library/Android/sdk/platform-tools/adb" -s emulator-14432 shell "rm  \"/sdcard/21265161_0.log\""
+detox[56907] TRACE: [EXEC_SUCCESS, #29] 
+detox[56907] TRACE: [ARTIFACT_START] starting FileArtifact
+detox[56907] TRACE: [ARTIFACT_STOP] stopping FileArtifact
+detox[56907] TRACE: [ARTIFACT_SAVE] saving FileArtifact to: artifacts/android.release.2021-09-26 19-26-50Z/detox_pid_56907.json.log { append: true }
+detox[56907] TRACE: [ARTIFACT_START] starting FileArtifact
+detox[56907] TRACE: [ARTIFACT_STOP] stopping FileArtifact
+detox[56907] TRACE: [ARTIFACT_SAVE] saving FileArtifact to: artifacts/android.release.2021-09-26 19-26-50Z/detox_pid_56907.log { append: true }
+detox[56907] DEBUG: [MOVE_FILE] moving "/private/var/folders/5p/_73b2bf53j3bhzvg4cm7r9b80000gn/T/2d5eeddf-7c0e-45a2-b109-f4470b0b335e.detox.log" to artifacts/android.release.2021-09-26 19-26-50Z/detox_pid_56907.json.log
+detox[56907] DEBUG: [MOVE_FILE] moving "/private/var/folders/5p/_73b2bf53j3bhzvg4cm7r9b80000gn/T/ea9eb2a0-110f-49cd-8053-27954cdb045c.detox.log" to artifacts/android.release.2021-09-26 19-26-50Z/detox_pid_56907.log
+detox[56907] ERROR: [APP_UNREACHABLE] Detox can't seem to connect to the test app(s)!
+
+HINT: 
+
+The test app might have crashed prematurely, or has had trouble setting up the connection.
+Refer to our troubleshooting guide, for full details: https://github.com/wix/Detox/blob/master/docs/Troubleshooting.RunningTests.md#tests-execution-hangs 
+
+
+
+detox[56907] DEBUG: [WSS_CLOSE] Detox server has been closed gracefully
+detox[56907] TRACE: [SESSION_TORN] tester exited session 1377c6dc-7143-c6d1-d412-f305023a284d
