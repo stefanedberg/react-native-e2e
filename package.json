@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "e2e-build-android": "detox build --c ios.release",
+    "e2e-build-ios": "detox build --c ios.release",
     "e2e-ios": "detox test --c ios.release",
     "e2e-build-android": "detox build --c android.release",
     "e2e-android": "detox test --c android.release",
