@@ -15,11 +15,20 @@ jobs:
 
     - name: Node
       uses: actions/setup-node@v1
+      with:
+        node-version: '14'
+
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: npm-${{ hashFiles('package-lock.json') }}
+        restore-keys: npm-
 
     - name: Use specific Java version for sdkmanager to work
       uses: joschi/setup-jdk@v2
       with:
-        java-version: '8' # The OpenJDK version to make available on the path
+        java-version: '14' # The OpenJDK version to make available on the path
         architecture: 'x64' # defaults to 'x64'
 
     - name: Download Android Emulator Image
@@ -46,5 +55,5 @@ jobs:
         $ANDROID_HOME/platform-tools/adb devices
         echo "Emulator started"
 
-    - name: Run Anroid E2E tests
+    - name: Run Android E2E tests
       run: npm run e2e-android
