@@ -28,7 +28,7 @@ jobs:
     - name: Use specific Java version for sdkmanager to work
       uses: joschi/setup-jdk@v2
       with:
-        java-version: '9' # The OpenJDK version to make available on the path
+        java-version: '8' # The OpenJDK version to make available on the path
         architecture: 'x64' # defaults to 'x64'
 
     - name: Download Android Emulator Image
